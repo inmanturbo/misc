@@ -56,7 +56,7 @@ cat $HISTFILE
 
 ### Refinements
 
-### install cockpit for easy interface configuration
+### Install cockpit for easy interface configuration
 
 ```
 sudo apt install -y cockpit

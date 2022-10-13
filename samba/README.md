@@ -87,3 +87,14 @@ sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
 ```
 Now the NetworkManager is enabled, interface configurations can be done via the GUI or from the command line, using the nmcli command.
+
+Open cockpit in web browser (`https://${server_ip}:9090`) and set up static ip:
+
+- set the server's static ip as primary dns
+- make sure to make all the proper infra configurations for your environment (eg static mappings in `pfsense`)
+- set your preferred dns server as secondary 
+- ex:
+
+![Screenshotdc1](https://user-images.githubusercontent.com/47095624/195656686-1381983f-0963-4414-aa1d-a12925a0db14.png)
+
+

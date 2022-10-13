@@ -1,7 +1,7 @@
 
 # Samba domain controller
 
-### original unhappy path
+### Original unhappy path
 
 ```bash
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
@@ -54,4 +54,36 @@ exit
 cat $HISTFILE
 ```
 
-### refinements
+### Refinements
+
+### install cockpit for easy interface configuration
+
+```
+sudo apt install -y cockpit
+```
+
+Install NetworkManager on Ubuntu:
+```bash
+sudo apt-get install network-manager
+```
+
+Open the .yaml config file inside the /etc/netplan directory and replace the existing configuration with following:
+```yaml
+network:
+  version: 2
+  renderer: NetworkManager
+  ```
+  
+Generate backend specific configuration files for NetworkManager with netplan command:
+
+```bash
+sudo netplan generate
+```
+Start the NetworkManager Service:
+
+```bash
+sudo systemctl unmask NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+```
+Now the NetworkManager is enabled, interface configurations can be done via the GUI or from the command line, using the nmcli command.

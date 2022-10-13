@@ -15,6 +15,6 @@ sudo firewall-cmd --add-service=freeipa-ldap --add-service=freeipa-ldaps --perma
 sudo dnf install -y freeipa-server freeipa-server-dns nfs-utils
 ```
 
-```
+```bash
 sudo ipa-server-install --mkhomedir --allow-zone-overlap ##<--needed if domain is already registered elsewhere
 ```

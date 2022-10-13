@@ -116,3 +116,40 @@ When prompted for the Administrative server for your Kerberos realm:
 
 > enter in all lowercase the fqdn of your samba/ad instance, eg `dc1.homenet.com`
 
+## Configure services
+
+Backup `/etc/smb.conf`
+
+```bash
+sudo  mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
+```
+
+Run `samba-tool domain provision --use-rfc2307 --interactive`
+
+```bash
+sudo samba-tool domain provision --use-rfc2307 --interactive
+```
+When prompted for Realm:
+
+> enter in ALL CAPS the domain that will be your active directory domain, eg `HOMENET.COM`
+
+When prompted for domain:
+
+> Enter in ALL CAPS your domain name, without tld, eg `HOMENET`
+
+When prompted for server role
+
+> enter `dc`
+
+When prompted for DNS backend:
+
+> enter `SAMBA_INTERNAL`
+
+When prompted for DNS forwarder IP address:
+
+> enter your preferred or upstream dns server, e.g. the ip for a google or cloudflare dns server, or isp dns server, or the ip address for pfsense (if running unbound)
+
+
+
+
+

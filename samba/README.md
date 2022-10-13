@@ -173,7 +173,7 @@ Start and enable the active directory service:
 sudo systemctl enable --now samba-ad-dc.service
 ```
 
-Verify that services are running:
+Verify services are running:
 
 ```bash
 sudo netstat -antp | egrep 'smbd|samba'

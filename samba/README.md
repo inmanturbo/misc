@@ -97,4 +97,22 @@ Open cockpit in web browser (`https://${server_ip}:9090`) and set up static ip:
 
 ![Screenshotdc1](https://user-images.githubusercontent.com/47095624/195656686-1381983f-0963-4414-aa1d-a12925a0db14.png)
 
+## Install Dependecies
+
+```bash
+sudo apt install -y samba winbind krb5-config smbclient dnsutils net-tools
+```
+
+
+When prompted for Default Kerberos version 5 realm:
+
+> enter in ALL CAPS the domain that will be your active directory domain, eg `HOMENET.COM`
+
+When prompted for the Kerberos servers for your realm: 
+
+> enter in all lowercase the fqdn of your samba/ad instance, eg `dc1.homenet.com`
+
+When prompted for the Administrative server for your Kerberos realm:
+
+> enter in all lowercase the fqdn of your samba/ad instance, eg `dc1.homenet.com`
 

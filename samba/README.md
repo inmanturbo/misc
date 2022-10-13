@@ -1,3 +1,8 @@
+
+# Samba domain controller
+
+### original unhappy path
+
 ```bash
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 sudo hostnamectl set-hostname ubuntu-base
@@ -48,3 +53,5 @@ sudo nano /etc/resolv.conf
 exit
 cat $HISTFILE
 ```
+
+### refinements

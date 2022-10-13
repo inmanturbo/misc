@@ -149,7 +149,62 @@ When prompted for DNS forwarder IP address:
 
 > enter your preferred or upstream dns server, e.g. the ip for a google or cloudflare dns server, or isp dns server, or the ip address for pfsense (if running unbound)
 
+Next copy kerbeos config into `/etc` directory:
 
+```bash
+sudo cp /var/lib/samba/private/krb5.conf /etc
+```
 
+Disable services that will now be handled by samba active directory domain controller:
 
+```
+sudo systemctl disable --now smbd nmbd winbind systemd-resolved.service
+```
 
+Unmask the active directory service: 
+
+```bash
+sudo systemctl unmask samba-ad-dc.service
+```
+
+Start and enable the active directory service:
+
+```bash
+sudo systemctl enable --now samba-ad-dc.service
+```
+
+Verify that services are running:
+
+```bash
+sudo netstat -antp | egrep 'smbd|samba'
+```
+
+expected output:
+
+<pre>tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      3387/<font color="#EF2929"><b>smbd</b></font>           
+tcp        0      0 0.0.0.0:389             0.0.0.0:*               LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp        0      0 0.0.0.0:464             0.0.0.0:*               LISTEN      3405/<font color="#EF2929"><b>samba</b></font>: task[kd 
+tcp        0      0 0.0.0.0:135             0.0.0.0:*               LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      3387/<font color="#EF2929"><b>smbd</b></font>           
+tcp        0      0 0.0.0.0:3269            0.0.0.0:*               LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp        0      0 0.0.0.0:3268            0.0.0.0:*               LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp        0      0 0.0.0.0:53              0.0.0.0:*               LISTEN      3428/<font color="#EF2929"><b>samba</b></font>: task[dn 
+tcp        0      0 0.0.0.0:49154           0.0.0.0:*               LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp        0      0 0.0.0.0:49153           0.0.0.0:*               LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp        0      0 0.0.0.0:49152           0.0.0.0:*               LISTEN      3386/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp        0      0 0.0.0.0:88              0.0.0.0:*               LISTEN      3405/<font color="#EF2929"><b>samba</b></font>: task[kd 
+tcp        0      0 0.0.0.0:636             0.0.0.0:*               LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp6       0      0 :::445                  :::*                    LISTEN      3387/<font color="#EF2929"><b>smbd</b></font>           
+tcp6       0      0 :::389                  :::*                    LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp6       0      0 :::464                  :::*                    LISTEN      3405/<font color="#EF2929"><b>samba</b></font>: task[kd 
+tcp6       0      0 :::135                  :::*                    LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp6       0      0 :::139                  :::*                    LISTEN      3387/<font color="#EF2929"><b>smbd</b></font>           
+tcp6       0      0 :::3269                 :::*                    LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp6       0      0 :::3268                 :::*                    LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+tcp6       0      0 :::53                   :::*                    LISTEN      3428/<font color="#EF2929"><b>samba</b></font>: task[dn 
+tcp6       0      0 :::49154                :::*                    LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp6       0      0 :::49153                :::*                    LISTEN      3392/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp6       0      0 :::49152                :::*                    LISTEN      3386/<font color="#EF2929"><b>samba</b></font>: task[rp 
+tcp6       0      0 :::88                   :::*                    LISTEN      3405/<font color="#EF2929"><b>samba</b></font>: task[kd 
+tcp6       0      0 :::636                  :::*                    LISTEN      3395/<font color="#EF2929"><b>samba</b></font>: task[ld 
+</pre>

@@ -16,6 +16,9 @@ ip address add $physicalcidr dev br-ex || :
 ip route del default via $gateway || :
 ip route add default via $gateway dev br-ex ||:
 ```
+```bash
+sudo chmod +x /usr/local/bin/microstack-br-workaround
+```
 
 ```bash
 sudo nano /etc/systemd/system/microstack-br-workaround.service

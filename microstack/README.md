@@ -51,6 +51,15 @@ sudo microstack init --auto --control --setup-loop-based-cinder-lvm-backend --lo
 ```
 
 ```bash
+sudo snap alias microstack.openstack openstack
+sudo snap alias microstack.ovs-vsctl ovs-vsctl
+```
+
+```bash
+interface=$(ip route get 8.8.8.8 | awk -F"dev " 'NR==1{split($2,a," ");print a[1]}'); ovs-vsctl add-port br-ex $interface
+```
+
+```bash
 systemctl daemon-reload
 systemctl enable microstack-br-workaround.service
 ```

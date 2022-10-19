@@ -41,6 +41,11 @@ Type=oneshot
 [Install]
 WantedBy=multi-user.target
 ```
+
+```bash
+sudo snap install microstack --devmode --beta
+```
+
 ```bash
 sudo microstack init --auto --control --setup-loop-based-cinder-lvm-backend --loop-device-file-size 5
 ```

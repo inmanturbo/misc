@@ -12,7 +12,7 @@ sudo nano /usr/local/bin/microstack-br-workaround
 physicalcidr=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
 gateway=$(ip route show 0.0.0.0/0 | awk '{print $3}')
 # Add IP address to br-ex
-ip address add $physicalcidr dev br-ex || :
+ip address add "${physicalcidr}/24" dev br-ex || :
 ip route del default via $gateway || :
 ip route add default via $gateway dev br-ex ||:
 ```
@@ -56,14 +56,11 @@ sudo snap alias microstack.ovs-vsctl ovs-vsctl
 ```
 
 ```bash
-interface=$(ip route get 8.8.8.8 | awk -F"dev " 'NR==1{split($2,a," ");print a[1]}');\
-  sudo ovs-vsctl add-port br-ex $interface && \
-  sudo ip addr flush dev $interface && \
-  sudo ip addr add $(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}') dev br-ex && \
-  sudo ip link set br-ex up
-  ```
+sudo systemctl daemon-reload
+sudo systemctl enable microstack-br-workaround.service
+sudo reboot
+```
 
 ```bash
-systemctl daemon-reload
-systemctl enable microstack-br-workaround.service
+sudo snap get microstack config.credentials.keystone-password
 ```

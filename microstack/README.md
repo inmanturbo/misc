@@ -41,6 +41,9 @@ Type=oneshot
 [Install]
 WantedBy=multi-user.target
 ```
+```bash
+sudo microstack init --auto --control --setup-loop-based-cinder-lvm-backend --loop-device-file-size 50
+```
 
 ```bash
 systemctl daemon-reload

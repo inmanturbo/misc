@@ -1,4 +1,8 @@
 ```bash
+sudo nano /usr/local/bin/microstack-br-workaround
+```
+
+```bash
 #!/bin/bash
 #
 # Workaround to enable physical network access to MicroStack
@@ -11,6 +15,10 @@ gateway=$(ip route show 0.0.0.0/0 | awk '{print $3}')
 ip address add $physicalcidr dev br-ex || :
 ip route del default via $gateway || :
 ip route add default via $gateway dev br-ex ||:
+```
+
+```bash
+sudo nano /etc/systemd/system/microstack-br-workaround.service
 ```
 
 ```ini
@@ -29,4 +37,9 @@ Type=oneshot
 
 [Install]
 WantedBy=multi-user.target
+```
+
+```bash
+systemctl daemon-reload
+systemctl enable microstack-br-workaround.service
 ```

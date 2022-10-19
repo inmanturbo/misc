@@ -59,7 +59,7 @@ sudo snap alias microstack.ovs-vsctl ovs-vsctl
 interface=$(ip route get 8.8.8.8 | awk -F"dev " 'NR==1{split($2,a," ");print a[1]}');\
   ovs-vsctl add-port br-ex $interface && \
   ip addr flush dev $interface && \
-  ip addr add $(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}') dev br-ex \
+  ip addr add $(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}') dev br-ex && \
   ip link set br-ex up
   ```
 

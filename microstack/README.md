@@ -42,7 +42,7 @@ Type=oneshot
 WantedBy=multi-user.target
 ```
 ```bash
-sudo microstack init --auto --control --setup-loop-based-cinder-lvm-backend --loop-device-file-size 50
+sudo microstack init --auto --control --setup-loop-based-cinder-lvm-backend --loop-device-file-size 5
 ```
 
 ```bash

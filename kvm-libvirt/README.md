@@ -1,4 +1,5 @@
-1665596903:0;sudo apt install -y cockpit
+```zsh
+: 1665596903:0;sudo apt install -y cockpit
 : 1665597215:0;sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
 : 1665597337:0;zsysctl
 : 1665597433:0;sudo apt install -y zsys
@@ -45,3 +46,4 @@
 : 1665602941:0;sudo update-grub
 : 1665602951:0;sudo reboot now
 : 1665603055:0;sudo dmesg | grep -e DMAR -e IOMMU
+```

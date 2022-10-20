@@ -1,0 +1,5 @@
+kvm-libvirt
+  - truenas scale (controls sata controll via vfio)
+    - dc1 (samba active directory domain controller)
+    - ipa (freeipa server)
+    - 

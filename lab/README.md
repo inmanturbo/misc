@@ -2,4 +2,4 @@
   - truenas scale (controls sata controll via vfio)
     - dc1 (samba active directory domain controller)
     - ipa (freeipa server)
-    - 
+    - windows 10 client (for testing ad and samba, and rsat)

@@ -26,7 +26,6 @@
 : 1665601782:0;sudo dmesg | grep -e DMAR -e IOMMU
 : 1665601799:0;sudo reboot now
 : 1665601913:0;sudo dmesg | grep -e DMAR -e IOMMU
-: 1665601930:0;virt-manager &
 : 1665602299:0;sudo nano  /etc/modules
 : 1665602341:0;lspci |more
 : 1665602457:0;echo "options vfio-pci ids=06:00.2" | sudo tee -a /etc/modprobe.d/vfio.conf

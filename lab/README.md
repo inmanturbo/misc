@@ -43,5 +43,5 @@
   
  
   
-  ***due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity will be lost until reboot!**
+  ****due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity will be lost until reboot!***
  

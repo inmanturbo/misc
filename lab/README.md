@@ -8,7 +8,7 @@
 
 ### Notes
 
-- Installing pfsense in nested virtualization on truenas scale requires bridge at both levels
+- Running an externally accesible pfsense network in nested virtualization on truenas scale requires bridge at both levels
    - attach port to bridge in libvirt (eg br1)
    - create libvirt network using the bridge
    ```xml

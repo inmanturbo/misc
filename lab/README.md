@@ -9,7 +9,7 @@
 ### Notes
 
 - Running an externally accesible pfsense network in nested virtualization on truenas scale requires bridge at both levels
-   - attach port to bridge on ubuntu host (eg br1)
+   - create a bridge on ubuntu host and attach a physical port (eg br1)
    - create libvirt network using the bridge
    ```xml
    <network>
@@ -43,5 +43,5 @@
   
  
   
-  *due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity will be lost until reboot
+  **due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity will be lost until reboot*
  

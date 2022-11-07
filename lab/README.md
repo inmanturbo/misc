@@ -39,9 +39,9 @@
   ```bash
   cli -c "network interface checkin"
   ```
-  - reboot system!
+  - reboot (truenas scale) system!
   
  
   
-  ****due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity will be lost until reboot!***
+  ****due to the horrendous state of netwrking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
  

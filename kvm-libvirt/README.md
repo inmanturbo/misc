@@ -1,6 +1,11 @@
 # Grapical workstation kvm lab
 
-### First install ubuntu deskop with zfs on root
+## First install ubuntu deskop with zfs on root
+
+### Getting the desktop iso
+```bash
+curl https://releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso -o ubuntu-22.04.1-desktop-amd64.iso
+```
 
 ```bash
 sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils zsys cockpit cockpit-machines net-tools \

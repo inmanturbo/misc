@@ -8,6 +8,14 @@
 
 ### Notes
 
+#### Getting the truenas iso
+```bash
+curl https://download.truenas.com/TrueNAS-SCALE-Angelfish/22.02.4/TrueNAS-SCALE-22.02.4.iso -o TrueNAS-SCALE-22.02.4.iso
+```
+```bash
+sudo cp TrueNAS-SCALE-22.02.4.iso /var/lib/libvirt/images
+```
+
 - Running an externally accesible pfsense network in nested virtualization on truenas scale requires bridge at both levels
    - create a bridge on ubuntu host and attach a physical port (eg br1)
    - create libvirt network using the bridge

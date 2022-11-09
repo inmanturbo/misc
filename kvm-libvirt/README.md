@@ -7,6 +7,7 @@
 curl https://releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso -o ubuntu-22.04.1-desktop-amd64.iso
 ```
 
+### Install Packages and setup shell
 ```bash
 sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils zsys cockpit cockpit-machines net-tools \
   zsh software-properties-common curl git libnss3-tools jq xsel xrdp
@@ -50,6 +51,8 @@ vfio_iommu_type1
 vfio_pci
 vfio_virqfd
 ```
+
+### Enable sata controller to be passed through to TrueNAS VM
 
 ```bash
 lspci |grep SATA

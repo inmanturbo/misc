@@ -52,6 +52,7 @@ sudo cp TrueNAS-SCALE-22.02.4.iso /var/lib/libvirt/images
  
   
   ****due to the horrendous state of networking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
+https://ixsystems.atlassian.net/browse/NAS-118915
   
 # Adding TrueCharts
 When opening the Apps menu item on TrueNAS SCALE for the first time, you get prompted to setup a new pool for Apps. This will create a new dataset on the selected pool called "ix-applications", which will contain all docker containers and most application data, unless specified otherwise.

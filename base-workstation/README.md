@@ -3,7 +3,7 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y openssh-server
 ip a
-echo "inman ALL=(ALL) NOPASSWD: ALL" |sudo tee -a /etc/sudoers
+echo "${USER} ALL=(ALL) NOPASSWD: ALL" |sudo tee -a /etc/sudoers
 sudo apt install zsh software-properties-common curl git network-manager libnss3-tools jq xsel zsys
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```

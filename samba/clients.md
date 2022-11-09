@@ -13,3 +13,12 @@ https://www.microsoft.com/software-download/windows10
 ```bash
 scp ~/Downloads/Win10_21H2_English_x64.iso root@truenas.lab.arpa:/mnt/tank/VM/ISO
 ```
+
+Join Vm to domain:
+
+- right click start (window icon) > system > rename this pc (advanced)
+- Install `rsat` https://www.microsoft.com/en-us/download/details.aspx?id=45520
+- launch mmc
+- add snapins for ad and save as on desktop
+
+

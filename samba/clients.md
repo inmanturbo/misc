@@ -6,3 +6,10 @@ curl https://releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso -o ubunt
 ```bash
 mv ubuntu-22.04.1-desktop-amd64.iso /mnt/tank/VM/ISO
 ```
+### Windows example
+download here:
+https://www.microsoft.com/software-download/windows10
+
+```bash
+scp ~/Downloads/Win10_21H2_English_x64.iso root@truenas.lab.arpa:/mnt/tank/VM/ISO
+```

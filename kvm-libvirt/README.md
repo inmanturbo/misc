@@ -1,3 +1,7 @@
+# Grapical workstation kvm lab
+
+### First install ubuntu deskop with zfs on root
+
 ```bash
 sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils zsys cockpit cockpit-machines net-tools \
   zsh software-properties-common curl git libnss3-tools jq xsel

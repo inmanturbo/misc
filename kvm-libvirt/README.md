@@ -4,7 +4,7 @@
 
 ```bash
 sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils zsys cockpit cockpit-machines net-tools \
-  zsh software-properties-common curl git libnss3-tools jq xsel
+  zsh software-properties-common curl git libnss3-tools jq xsel xrdp
 ```
 ```bash
 echo "${USER} ALL=(ALL) NOPASSWD: ALL" |sudo tee -a /etc/sudoers
@@ -63,4 +63,6 @@ sudo reboot now
 ```
 sudo dmesg | grep -e DMAR -e IOMMU
 ```
+
+#### Finally, go to settings>power and set `Screen Blank` to never, and `Automatic Suspend` to Off
 

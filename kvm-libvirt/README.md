@@ -1,4 +1,4 @@
-# Grapical workstation kvm lab
+# Graphical workstation kvm lab
 
 ## First install ubuntu deskop with zfs on root
 

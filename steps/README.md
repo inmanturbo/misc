@@ -42,6 +42,4 @@
       - Branch: `main`
   - Install traefik
     - Apps>Available Applications>traefik>install
-      - name: traefik
-      - 
     

@@ -1,10 +1,10 @@
 - Create Dataset for Unix shares, i.e `tank/Shares/Unix`
-- Create Dataset for docker i.e `tank/Shares/Unix/Docker` 
+- Create Dataset for docker app i.e `tank/Shares/Unix/NginxProxyManager` 
   - at time of creation, under advanced>acl select nfsv4
 - Create user in in truenas scale
   - any name uid of `1000`
 - Set permissions
-  - Select View Permissions>Edit Permissions for `tank/Shares/Unix/Docker`
+  - Select View Permissions>Edit Permissions for `tank/Shares/Unix/NginxProxyManager`
   - set user to user created above
   - set group to user created above
 - Create NFS share
@@ -18,17 +18,42 @@
    && sudo sh get-docker.sh
    ```
 - install docker-compose
-```bash
-sudo apt install -y docker-compose
-```
+  ```bash
+  sudo apt install -y docker-compose
+  ```
 - add user to docker group
-```bash 
-sudo usermod -aG docker $USER
-```
-```bash
-newgrp docker
-```
-test installation
-```bash
-docker run hello-world
-```
+  ```bash 
+  sudo usermod -aG docker $USER
+  ```
+  ```bash
+  newgrp docker
+  ```
+- test installation
+  ```bash
+  docker run hello-world
+  ```
+- install nfs client
+  ```bash
+  sudo apt install -y nfs-common
+  ```
+- prepare mount point
+  ```bash
+  sudo mkdir -p /nginx_proxy_manager
+  ```
+  ```bash
+  sudo chown ${USER}:${USER} /nginx_proxy_manager
+  ```
+- add mount point to fstab, e.g:
+  ```bash
+  echo "truanas.lab.arpa:/mnt/tank/Shares/Unix/NginxProxyManager /nfs nfs  rw,async,noatime,hard   0    0" \
+    | sudo tee -a /etc/fstab
+  ```
+ - mount share
+   ```bash
+   sudo mount -a
+   ```
+ - symlink to home (optional)
+   ```bash
+   mkdir -p ${HOME}/docker-compose
+   ln -s /nginx_proxy_manager ${HOME}/docker-compose
+   ```

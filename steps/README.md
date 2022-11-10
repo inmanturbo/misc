@@ -30,4 +30,14 @@
 - Setup Traefik on Truenas Scale
   - Change Ports for truenas web interface to 83 and 444
     - system settings>general>GUI>settings
+      - Web Interface HTTP Port: `83`
+      - Web Interface HTTPS Port: `444`
+  - Add truecharts catalog to scale
+    - Go to "Apps" in the left hand menu
+    - Select the "Manage Catalogs" tab
+    - Click "Add Catalog" and enter the required information:
+      - Name: `truecharts`
+      - Repository: `https://github.com/truecharts/catalog`
+      - Preferred Trains: `stable`
+      - Branch: `main`
     

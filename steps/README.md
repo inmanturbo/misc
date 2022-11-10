@@ -1,6 +1,7 @@
 - Setup letsencrypt on truenas scale
   - add email to root account
     - credentials>local users>root>edit
+    
   - setup acme dns authenticator
     - credentials>certificates>acme dns authenticators>add
     - name: cloudflare
@@ -12,6 +13,7 @@
       - permissions: 
         - `Zone` `Zone` `Read`
         - `Zone` `DNS` `Edit`
+        
    - add csr
      - credentials>certificates>Certificate Signing Requests>add
        - name: eg example_com_csr
@@ -23,3 +25,6 @@
            - identifier: example_com_cert
            - ACME Server Directory URI: Production
            - Authenticator: Cloudflare
+           
+           
+- Setup Traefik on Truenas Scale

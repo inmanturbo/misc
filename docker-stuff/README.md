@@ -45,7 +45,7 @@
   ```
 - add mount point to fstab, e.g:
   ```bash
-  echo "truanas.lab.arpa:/mnt/tank/Shares/Unix/NginxProxyManager /nginx_proxy_manager nfs  rw,async,noatime,hard   0    0" \
+  echo "truenas.lab.arpa:/mnt/tank/Shares/Unix/NginxProxyManager /nginx_proxy_manager nfs  rw,async,noatime,hard   0    0" \
     | sudo tee -a /etc/fstab
   ```
  - mount share

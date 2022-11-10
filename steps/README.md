@@ -28,3 +28,6 @@
            
            
 - Setup Traefik on Truenas Scale
+  - Change Ports for truenas web interface to 83 and 444
+    - system settings>general>GUI>settings
+    

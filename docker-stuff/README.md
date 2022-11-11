@@ -54,6 +54,6 @@
    ```
  - symlink to home (optional)
    ```bash
-   mkdir -p ${HOME}/docker-compose
+   mkdir -p ~/docker-compose
    ln -s /nginx_proxy_manager ${HOME}/docker-compose
    ```

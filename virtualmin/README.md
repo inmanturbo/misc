@@ -8,9 +8,11 @@
 
 
 
-
-
-
+- Create Dataset for VirtualminMaster i.e `tank/Shares/Unix/VirtualminMaster` 
+  - at time of creation, under advanced>acl select nfsv4
+- Create NFS share
+  - Under advance set maproot user to `root`
+  - set maproot group to `root`
 
 ### Create User on Truenas system:
 ```
@@ -24,3 +26,4 @@ Permit Sudo:false
 Microsoft Account:false
 Samba Authentication:true
 ```
+#### Repeat steps above for each top level domain that you wish to store on Truenas!! 

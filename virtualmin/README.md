@@ -26,4 +26,4 @@ Permit Sudo:false
 Microsoft Account:false
 Samba Authentication:true
 ```
-#### Repeat steps above for each top level domain that you wish to store on Truenas!! 
+#### Repeat steps above for each top level domain that you wish to store on Truenas!! (Change "master" to top level domain user name)

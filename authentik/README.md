@@ -1,4 +1,6 @@
-## Authentik behind traefik on truenas scale:
+# Authentik behind traefik on truenas scale:
+
+## Configuring Authentik app in truenas scale:
 
 ### In the ingress section add a host with slash path for each domain that authentik will run on, ie 
 
@@ -41,7 +43,7 @@ Path Type *
 prefix
 ```
 
-# Middleware
+## Configuring Middleware in traefik on Truenas SCALE
 - Apps>traefik>edit
   - Middlewares>forwardAuth>Add
   - name: `authentik`
@@ -58,4 +60,17 @@ prefix
     - `X-authentik-meta-provider`
     - `X-authentik-meta-app`
     - `X-authentik-meta-version`
+
+## Configuring Proxy Provider in Authentik:
+- Applications>Applications>Create
+  - name, e.g.: `speedtest`
+  - slug, e.g.: `speedtest`
+  - provider>create provider>
+    - select type>Proxy Provider>next
+    - name, e.g.: `speedtest`
+    - For ability to restrict app to users or groups select `Forward auth (single application)`
+      - External host, eg: `https:speedtest.example.com`
+    - Click `Finish`
+   - Provider>Select>speedtest
+   - Click `Create`
 

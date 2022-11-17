@@ -41,5 +41,9 @@
     ``` 
   - Property mappings: Control/Command-select all Mappings which start with `authentik default LDAP` and `authentik default Active Directory`
   - Group property mappings: Select `authentik default LDAP Mapping: Name`
-
+- Allowing users to login with their UPN, e.g.: `john@example.com`
+  - Flows & Stages>Stages>Identification Stages>default-authentication-identification>Edit
+    - User Fields: Ctl+Click UPN to add
+    - Sources: Ctl+Click to active directory source (eg `company_name_active_directory`) to add
+  
   

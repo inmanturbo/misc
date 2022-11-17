@@ -1,5 +1,5 @@
 # Configuring Active Directory
-- Fist add Alternative UPN for your external domain
+- First add Alternative UPN for your external domain if using split dns
   - mmc>snap-ins>AD Domains & Trusts>Properties
     - Alternative UPN suffixes: `example.com` (for login like john@example.com)
 - Create user for authentik syncing

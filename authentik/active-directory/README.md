@@ -39,7 +39,7 @@
     ```
     dsquery user -name <any user name>
     ``` 
-  - Property mappings: Control/Command-select all Mappings which start with "authentik default LDAP" and "authentik default Active Directory"
-  - Group property mappings: Select "authentik default LDAP Mapping: Name"
+  - Property mappings: Control/Command-select all Mappings which start with `authentik default LDAP` and `authentik default Active Directory`
+  - Group property mappings: Select `authentik default LDAP Mapping: Name`
 
   

@@ -6,7 +6,7 @@
 #### Host
 HostName *
 ```
-auth.example.com                   x
+auth.example.com
 ```
 
 
@@ -14,7 +14,7 @@ auth.example.com                   x
 #### Host
 Path *
 ```
-/                 x
+/
 ```
 Path Type *
 ```
@@ -26,7 +26,7 @@ prefix
 #### Host
 HostName *
 ```
-*.example.com                   x
+*.example.com
 ```
 
 
@@ -34,7 +34,7 @@ HostName *
 #### Host
 Path *
 ```
-/outpost.goauthentik.io/                  x
+/outpost.goauthentik.io/
 ```
 Path Type *
 ```

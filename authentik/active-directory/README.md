@@ -35,7 +35,10 @@
   - Bind Password: password for `_service_authentik`
   - Base DN: `CN=Users,DC=<domain>,DC=<tld>`
     > Note: This will be your actual domain and not your custom UPN suffix!
-    > Can be retrieved by running `dsquery user -name <any user name>` from windows cmd prompt
+    > Can be retrieved by running the following command (from windows cmd prompt): 
+    ```
+    dsquery user -name <any user name>
+    ``` 
   - Property mappings: Control/Command-select all Mappings which start with "authentik default LDAP" and "authentik default Active Directory"
   - Group property mappings: Select "authentik default LDAP Mapping: Name"
 

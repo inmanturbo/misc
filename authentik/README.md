@@ -23,7 +23,7 @@ Path Type *
 prefix
 ```
 
-### And also add a catchall for subdomains to hit the outpost path (for logouts, etc) 
+### And also add a catch-all for subdomains to hit the outpost path (for logouts, etc) 
 #### Configure Hosts   Add
 #### Host
 HostName *

@@ -44,18 +44,18 @@ prefix
 # Middleware
 - Apps>traefik>edit
   - Middlewares>forwardAuth>Add
-  - name: `auth`
+  - name: `authentik`
   - address: `http://authentik-http.ix-authentik.svc.cluster.local:10230/outpost.goauthentik.io/auth/traefik`
   - Configure authResponseHeaders>Add (x11)
-    1. `X-authentik-username`
-    2. `X-authentik-groups`
-    3. `X-authentik-email`
-    4. `X-authentik-name`
-    5. `X-authentik-uid`
-    6. `X-authentik-jwt`
-    7. `X-authentik-meta-jwks`
-    8. `X-authentik-meta-outpost`
-    9. `X-authentik-meta-provider`
-    10. `X-authentik-meta-app`
-    11. `X-authentik-meta-version`
+    - `X-authentik-username`
+    - `X-authentik-groups`
+    - `X-authentik-email`
+    - `X-authentik-name`
+    - `X-authentik-uid`
+    - `X-authentik-jwt`
+    - `X-authentik-meta-jwks`
+    - `X-authentik-meta-outpost`
+    - `X-authentik-meta-provider`
+    - `X-authentik-meta-app`
+    - `X-authentik-meta-version`
 

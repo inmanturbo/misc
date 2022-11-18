@@ -1,6 +1,6 @@
 ### Nginx on dynamic ports alongside Laravel Valet (for developing microservices behind a proxy)
 
-Using the config below, the workfolow is as follows:
+Using the config below (replacing USERNAME with our username, the workfolow is as follows:
 > Assumes you are using laravel and laravel valet or valet linux, and have `valet park`ed your `~/Sites` directory
 - create a new laravel app
   ```bash
@@ -47,7 +47,7 @@ server {
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		### fastcgi_pass must use the valet.sock
 		### unix:/Users/YOUR_USER_NAME/.config/valet/valet.sock
-		fastcgi_pass unix:/home/inman/.valet/valet.sock;
+		fastcgi_pass unix:/home/USERNAME/.valet/valet.sock;
 		fastcgi_index index.php;
 		fastcgi_intercept_errors on;
 		include fastcgi.conf;

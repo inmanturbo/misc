@@ -1,6 +1,6 @@
 ### Nginx on dynamic ports alongside Laravel Valet (for developing microservices behind a proxy)
 
-Using the config below (replacing USERNAME with our username, the workfolow is as follows:
+Using the config below (replacing USERNAME with our username, the workflow is as follows:
 > Assumes you are using laravel and laravel valet or valet linux, and have `valet park`ed your `~/Sites` directory
 - create a new laravel app
   ```bash

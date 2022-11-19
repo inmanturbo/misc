@@ -62,10 +62,10 @@ server {
 		log_not_found off;
 	}
 
-	error_page  500 502 503 504  /50x.html;
-	location = /50x.html {
-		root   html;
-	}
+	# error_page  500 502 503 504  /50x.html;
+	# location = /50x.html {
+	#	root   html;
+	# }
 }
 ```
 

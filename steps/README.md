@@ -1,4 +1,4 @@
-- Setup letsencrypt on truenas scale
+## Setup letsencrypt on truenas scale
   - add email to root account
     - credentials>local users>root>edit
     
@@ -14,7 +14,7 @@
         - `Zone` `Zone` `Read`
         - `Zone` `DNS` `Edit`
         
-   - add csr
+   ### add csr
      - credentials>certificates>Certificate Signing Requests>add
        - name: eg example_com_csr
        - fill in required fields (use something like homelab for organization)
@@ -27,7 +27,8 @@
            - Authenticator: Cloudflare
            
            
-- Setup Traefik on Truenas Scale
+## Setup Traefik on Truenas Scale
+
   - Change Ports for truenas web interface to 83 and 444
     - system settings>general>GUI>settings
       - Web Interface HTTP Port: `83`

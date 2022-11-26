@@ -14,18 +14,17 @@
         - `Zone` `Zone` `Read`
         - `Zone` `DNS` `Edit`
         
-   ### add csr
-   
-     - credentials>certificates>Certificate Signing Requests>add
-       - name: eg example_com_csr
-       - fill in required fields (use something like homelab for organization)
-       - Subject Alternate Names: `*.example.com`
-       - Save
-       - Create Acme Certificate
-         - credentials>certificates>Certificate Signing Requests>example_com_csr>click the wrench
-           - identifier: example_com_cert
-           - ACME Server Directory URI: Production
-           - Authenticator: Cloudflare
+### Add csr
+- credentials>certificates>Certificate Signing Requests>add
+  - name: eg example_com_csr
+  - fill in required fields (use something like homelab for organization)
+  - Subject Alternate Names: `*.example.com`
+  - Save
+  - Create Acme Certificate
+    - credentials>certificates>Certificate Signing Requests>example_com_csr>click the wrench
+      - identifier: example_com_cert
+      - ACME Server Directory URI: Production
+      - Authenticator: Cloudflare
            
            
 ## Setup Traefik on Truenas Scale

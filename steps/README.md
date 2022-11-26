@@ -37,6 +37,6 @@
       - Repository: `https://github.com/truecharts/catalog`
       - Preferred Trains: `stable`
       - Branch: `main`
-  - Install traefik
+  - ##### Install traefik
     - Apps>Available Applications>traefik>install
     

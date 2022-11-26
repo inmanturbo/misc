@@ -15,6 +15,7 @@
         - `Zone` `DNS` `Edit`
         
    ### add csr
+   
      - credentials>certificates>Certificate Signing Requests>add
        - name: eg example_com_csr
        - fill in required fields (use something like homelab for organization)

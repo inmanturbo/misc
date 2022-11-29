@@ -40,9 +40,6 @@
   ```bash
   sudo mkdir -p /nginx_proxy_manager
   ```
-  ```bash
-  sudo chown ${USER}:${USER} /nginx_proxy_manager
-  ```
 - add mount point to fstab, e.g:
   ```bash
   echo "truenas.lab.arpa:/mnt/tank/Shares/Unix/NginxProxyManager /nginx_proxy_manager nfs  rw,async,noatime,hard   0    0" \
@@ -51,6 +48,10 @@
  - mount share
    ```bash
    sudo mount -a
+   ```
+ - set permissions
+   ```bash
+   sudo chown ${USER}:${USER} /nginx_proxy_manager
    ```
  - symlink to home (optional)
    ```bash

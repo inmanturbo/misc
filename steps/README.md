@@ -1,4 +1,4 @@
-## Setup letsencrypt on truenas scale
+## Setup letsencrypt on TrueNAS-SCALE
   - ##### add email to root account
     - credentials>local users>root>edit
   - ##### setup acme dns authenticator
@@ -8,7 +8,7 @@
     - email: blank
     - ##### token: token from cloudflare
       - cloudflare>login>account>profile>api tokens to left>create token>create custom token
-      - name: eg truenas scale
+      - name: eg TrueNAS-SCALE
       - permissions: 
         - `Zone` `Zone` `Read`
         - `Zone` `DNS` `Edit`   
@@ -24,12 +24,20 @@
       - ACME Server Directory URI: Production
       - Authenticator: Cloudflare
 
-## Setup Traefik on Truenas Scale
+## Add Truecharts to TrueNAS-SCALE
+>When opening the Apps menu item on TrueNAS-SCALE for the first time, you get prompted to setup a new pool for Apps. This will create a new dataset on the selected pool called "ix-applications", which will contain all docker containers and most application data, unless specified otherwise.
+- #### Apps>Manage Catalogs [Add Catalog]
+  - Name: `truecharts`
+  - Repository: `https://github.com/truecharts/catalog`
+  - Preferred Trains: `stable`
+  - Branch: `main`
+
+## Setup Traefik on TrueNAS-SCALE
 - ##### Change Ports for truenas web interface to 83 and 444
   - ##### system settings>general>GUI>settings
     - Web Interface HTTP Port: `83`
     - Web Interface HTTPS Port: `444`
-- ##### Add truecharts catalog to scale
+- ##### Add [Truecharts](https://github.com/truecharts/charts) [catalog](`https://github.com/truecharts/catalog`) to scale
   - Go to "Apps" in the left hand menu
   - Select the "Manage Catalogs" tab
   - Click "Add Catalog" and enter the required information:
@@ -49,9 +57,9 @@
       ```
       443
       ```
-        
-## Setup Authentik behind traefik on truenas scale
-- #### Configure Authentik app in truenas scale:
+      
+## Setup Authentik behind traefik on TrueNAS-SCALE
+- #### Configure Authentik app in TrueNAS-SCALE:
   - #### In the ingress section add a host with slash path for each domain that authentik will run on
     #### Configure Hosts   [Add]
     #### Host
@@ -94,12 +102,12 @@
     ```
     auth.example.com
     ```
-    #### Select TrueNAS SCALE Certificate
+    #### Select TrueNAS-SCALE Certificate
     ```
     example_com_cert   ˅
     ```
     
-## Configure Middleware in traefik on Truenas SCALE
+## Configure Middleware in traefik on TrueNAS-SCALE
 - Apps>traefik>edit
   - Middlewares>forwardAuth>Add
   - name: `authentik`

@@ -39,4 +39,14 @@
       - Branch: `main`
   - ##### Install traefik
     - Apps>Available Applications>traefik>install
+      - #### web Entrypoint Configuration
+        Entrypoints Port *
+        ```
+        80
+        ```
+      - #### websecure Entrypoint Configuration
+        Entrypoints Port *
+        ```
+        443
+        ```
     

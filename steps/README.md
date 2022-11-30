@@ -133,7 +133,7 @@
     - select type>Proxy Provider>next
     - name, e.g.: `speedtest`
     - For ability to restrict app to users or groups select `Forward auth (single application)`
-      - External host, eg: `https:speedtest.example.com`
+      - External host, eg: `https://speedtest.example.com`
     - Click `Finish`
    - Provider>Select>speedtest
    - Click `Create`

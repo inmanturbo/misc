@@ -21,8 +21,7 @@ Using the config below (replacing USERNAME with your username, the workflow is a
   
 ```nginx
 server {
-	listen 2001;
-	listen 2002;
+	listen 2001-2020;
 	# listen [::]:80;
 	server_name default_server;
 

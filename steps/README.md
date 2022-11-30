@@ -50,44 +50,55 @@
       443
       ```
         
-  ## Setup Authentik behind traefik on truenas scale
-  - #### Configure Authentik app in truenas scale:
-    - #### In the ingress section add a host with slash path for each domain that authentik will run on
-      #### Configure Hosts   Add
-      #### Host
-      HostName *
-      ```
-      auth.example.com
-      ```
-      #### Configure Paths   Add
-      #### Host
-      Path *
-      ```
-      /
-      ```
-      Path Type *
-      ```
-      prefix
-      ```
-    - #### Add a catch-all for subdomains to hit the outpost path (for logouts, etc) 
-      #### Configure Hosts   Add
-      #### Host
-      HostName *
-      ```
-      *.example.com
-      ```
-
-
-      #### Configure Paths   Add
-      #### Host
-      Path *
-      ```
-      /outpost.goauthentik.io/
-      ```
-      Path Type *
-      ```
-      prefix
-      ```
+## Setup Authentik behind traefik on truenas scale
+- #### Configure Authentik app in truenas scale:
+  - #### In the ingress section add a host with slash path for each domain that authentik will run on
+    #### Configure Hosts   [Add]
+    #### Host
+    HostName *
+    ```
+    auth.example.com
+    ```
+    #### Configure Paths   [Add]
+    #### Host
+    Path *
+    ```
+    /
+    ```
+    Path Type *
+    ```
+    prefix
+    ```
+  - #### Add a catch-all for subdomains to hit the outpost path (for logouts, etc) 
+    #### Configure Hosts   [Add]
+    #### Host
+    HostName *
+    ```
+    *.example.com
+    ```
+    #### Configure Paths   [Add]
+    #### Host
+    Path *
+    ```
+    /outpost.goauthentik.io/
+    ```
+    Path Type *
+    ```
+    prefix
+    ```
+  - #### Add host to tls settings
+    #### Configure TLS-Settings   [Add]
+    #### Host
+    #### Configure Certificate Hosts [Add]
+    #### Host*
+    ```
+    auth.exampl.com
+    ```
+    #### Select TrueNAS SCALE Certificate
+    ```
+    example_com_cert   ˅
+    ```
+    
 ## Configure Middleware in traefik on Truenas SCALE
 - Apps>traefik>edit
   - Middlewares>forwardAuth>Add

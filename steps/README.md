@@ -152,7 +152,7 @@
     ```
     example_com_cert   ˅
     ```
-  - #### Add Middlware
+  - #### Add Middleware
     #### Configure Traefik Middlewares [Add]
     #### Name *
     ```

@@ -92,7 +92,7 @@
     #### Configure Certificate Hosts [Add]
     #### Host*
     ```
-    auth.exampl.com
+    auth.example.com
     ```
     #### Select TrueNAS SCALE Certificate
     ```

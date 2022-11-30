@@ -137,3 +137,24 @@
     - Click `Finish`
    - Provider>Select>speedtest
    - Click `Create`
+
+## Secure an app using authentik middleware
+- #### Apps>Available Applications>openspeedtest
+  - #### Enable Ingress
+    #### Main Ingress
+    - [x] Enable ingress
+
+    #### Configure Hosts [Add]
+    ```
+    speedtest.example.com
+    ```
+    #### Configure TLS-Settings [Add]
+    ```
+    example_com_cert   ˅
+    ```
+  - #### Add Middlware
+    #### Configure Traefik Middlewares [Add]
+    #### Name *
+    ```
+    authentik
+    ```

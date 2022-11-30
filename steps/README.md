@@ -138,7 +138,7 @@
    - Provider>Select>speedtest
    - Click `Create`
 
-## Secure an app using authentik middleware
+## Secure app using authentik middleware
 - #### Apps>Available Applications>openspeedtest
   - #### Enable Ingress
     #### Main Ingress

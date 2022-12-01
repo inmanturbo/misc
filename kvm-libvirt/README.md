@@ -122,3 +122,29 @@
   #### Name `br1`
   #### Ports
   - [x] eno2 <--use whichever port you want to use to connect VM's to the internet
+
+## Create a virtual network with the bridge
+- #### create an xml file
+  ```bash
+  nano bridged-network.xml
+  ```
+  paste in the follwing:
+  ```xml
+  <network>
+   <name>br0</name>
+   <forward mode="bridge"/>
+   <bridge name="br1"/>
+  </network>
+  ```
+- #### define the network
+  ```bash
+  sudo virsh net-define bridged-network.xml
+  ```
+- #### Start the network
+  ```bash
+  sudo virsh net-start br0
+  ```
+- #### set the network to autostart
+  ```bash
+  sudo virsh net-autostart br0
+  ```

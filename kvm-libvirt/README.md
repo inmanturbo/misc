@@ -13,9 +13,10 @@
   # sudo dd if=ubuntu-22.04.1-desktop-amd64.iso of=/dev/sdx bs=1024k status=progress
   ```
 
-### Install Packages and setup shell
+## Install Packages and setup shell
 ```bash
-sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils zsys cockpit cockpit-machines net-tools \
+sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients \
+  bridge-utils zsys cockpit cockpit-machines net-tools \
   zsh software-properties-common curl git libnss3-tools jq xsel xrdp
 ```
 ```bash

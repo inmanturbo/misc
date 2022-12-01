@@ -95,8 +95,30 @@
   ```
 
 ## Configure the system to never poweroff or autosuspend
+> If you are running your host headless you can access the graphical 
+> environment using reminna over xrdp if you install `xrd` and disabled wayland
 - #### Login to the desktop environment 
   - Navigate to `Settings>Power` 
   - Set `Screen Blank` to **Never**
   - Set `Automatic Suspend` to **Off** 
 
+## Create a bridge for VM Networking
+> If you want to have VMs on the regular LAN and want to allow Host/VM communication
+> you will need to create a bridge interface for your VMs. One of the simplets way to 
+> do this is using by using cockpit
+- #### Open cockpit in web browser (https://${server_ip}:9090) 
+  - First enable administrative access (I advise loggoing out and back in after enabling it for your user)
+  - Navigate to Networking>[Add Bridge]
+    #### Bridge Settings
+    #### Name `br0`
+    #### Ports
+    - [x] eno1 <--use whichever port you want to use to connect VM's to the internet
+- #### Repeat for as many seperate ports as you want to give to your VM(s)
+> In the case of this example, the host will have a single TrueNAS-SCALE VM
+> which will host all other VMs using nested virtualization. In this case it is a good idea
+> to give the VM at least two network ports -- one for management and another for everything else
+- Navigate to Networking>[Add Bridge]
+  #### Bridge Settings
+  #### Name `br1`
+  #### Ports
+  - [x] eno2 <--use whichever port you want to use to connect VM's to the internet

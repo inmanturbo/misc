@@ -24,7 +24,7 @@
       - ACME Server Directory URI: Production
       - Authenticator: Cloudflare
 
-## Add Truecharts to TrueNAS-SCALE
+## Add [Truecharts](https://github.com/truecharts/charts) to TrueNAS-SCALE
 >When opening the Apps menu item on TrueNAS-SCALE for the first time, you get prompted to setup a new pool for Apps. This will create a new dataset on the selected pool called "ix-applications", which will contain all docker containers and most application data, unless specified otherwise.
 - #### Apps>Manage Catalogs [Add Catalog]
   - Name: `truecharts`
@@ -37,14 +37,6 @@
   - ##### system settings>general>GUI>settings
     - Web Interface HTTP Port: `83`
     - Web Interface HTTPS Port: `444`
-- ##### Add [Truecharts](https://github.com/truecharts/charts) [catalog](`https://github.com/truecharts/catalog`) to scale
-  - Go to "Apps" in the left hand menu
-  - Select the "Manage Catalogs" tab
-  - Click "Add Catalog" and enter the required information:
-    - Name: `truecharts`
-    - Repository: `https://github.com/truecharts/catalog`
-    - Preferred Trains: `stable`
-    - Branch: `main`
 - ##### Install traefik
   - Apps>Available Applications>traefik>install
     - #### web Entrypoint Configuration

@@ -17,7 +17,7 @@
 - #### Install packages using `apt`
   ```bash
   sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients \
-    bridge-utils zsys cockpit cockpit-machines net-tools \
+    bridge-utils zsys cockpit cockpit-machines net-tools openssh-server \
     zsh software-properties-common curl git libnss3-tools jq xsel xrdp
   ```
 - #### (Optionally) Allow passwordless sudo for your user

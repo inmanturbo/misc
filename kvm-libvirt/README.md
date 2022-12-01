@@ -96,7 +96,7 @@
 
 ## Configure the system to never poweroff or autosuspend
 - #### Login to the desktop environment 
-  - Go to settings>power 
+  - Navigate to `Settings>Power` 
   - set `Screen Blank` to **Never**
   - set `Automatic Suspend` to **Off** 
 

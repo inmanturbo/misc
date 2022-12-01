@@ -67,7 +67,7 @@
   vfio_virqfd
   ```
 
-## Enable sata controller to be passed through to TrueNAS VM
+## Enable SATA Controller to be passed through to TrueNAS VM
 > This requires a discrete Sata controller, and a seperate drive/controller for the host.
 > The board being used in this example has a sata controller and a seperate nvme drive.
 > The ubuntu host is installed on the nvme drive, on which the default libvirt pool will

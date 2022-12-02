@@ -107,7 +107,7 @@
 > you will need to create a bridge interface for your VMs. One of the simplets way to 
 > do this is using by using cockpit
 - #### Open cockpit in web browser (https://${server_ip}:9090) 
-  - First enable administrative access (I advise loggoing out and back in after enabling it for your user)
+  - First enable administrative access (I advise logging out and back in after enabling it for your user)
   - Navigate to Networking>[Add Bridge]
     #### Bridge Settings
     #### Name `br0`

@@ -190,21 +190,19 @@
 - Complete install via graphical spice or vnc
  
 - create bridge in truenas scale (requires console access!*)
- ```bash
- cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
- ```
+   ```bash
+   cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
+   ```
  - commit changes
-```bash
-cli -c "network interface commit"
-```
+  ```bash
+  cli -c "network interface commit"
+  ```
 - persist changes
-```bash
-cli -c "network interface checkin"
-```
+  ```bash
+  cli -c "network interface checkin"
+  ```
 - reboot (truenas scale) system!
   
- 
-  
-  ****due to the horrendous state of networking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
+****due to the horrendous state of networking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
 https://ixsystems.atlassian.net/browse/NAS-118915
 

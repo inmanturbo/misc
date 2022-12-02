@@ -127,7 +127,7 @@
 > The instructions below are to replace the default virtual network
 > with a bridged network. If you wish to create a seperate bridged network
 > and leave the default network as is skip steps 3-4 below, and use another
-> name in place of `default`
+> name for the network in place of `default`
 1. #### create an xml file
   ```bash
   nano bridged-network.xml

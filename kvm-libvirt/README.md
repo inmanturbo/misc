@@ -189,14 +189,14 @@
 ![pci-device](https://user-images.githubusercontent.com/47095624/205194531-9c5f0229-b776-4816-a538-6094f9f2e153.png)
 - Complete install via graphical spice or vnc
  
-- create bridge in truenas scale (requires console access!*)
+- create bridge in truenas scale (requires console access!)
    ```bash
    cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
    ```
  - commit changes
-  ```bash
-  cli -c "network interface commit"
-  ```
+    ```bash
+    cli -c "network interface commit"
+    ```
 - persist changes
   ```bash
   cli -c "network interface checkin"

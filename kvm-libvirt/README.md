@@ -131,9 +131,9 @@
   Paste in the following:
   ```xml
   <network>
-   <name>br0</name>
+   <name>default</name>
    <forward mode="bridge"/>
-   <bridge name="br1"/>
+   <bridge name="br0"/>
   </network>
   ```
 - #### define the network
@@ -142,9 +142,9 @@
   ```
 - #### Start the network
   ```bash
-  sudo virsh net-start br0
+  sudo virsh net-start default
   ```
 - #### set the network to autostart
   ```bash
-  sudo virsh net-autostart br0
+  sudo virsh net-autostart default
   ```

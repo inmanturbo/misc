@@ -84,6 +84,9 @@
   ```bash
   echo "options vfio-pci ids=07:00.2" | sudo tee -a /etc/modprobe.d/vfio.conf
   ```
+> ### NOTE:
+> These steps will also work for an LSI HBA installed in a pcie slot
+
 ## Reboot System and verify changes
 - #### Reboot
   ``` bash

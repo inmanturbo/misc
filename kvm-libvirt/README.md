@@ -189,7 +189,7 @@
 ![pci-device](https://user-images.githubusercontent.com/47095624/205194531-9c5f0229-b776-4816-a538-6094f9f2e153.png)
 - Complete install via graphical spice or vnc
  
-- create bridge in truenas scale (requires console access!)
+- create bridge in truenas scale (Use vnc or spice console instead of ssh!)
    ```bash
    cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
    ```
@@ -203,6 +203,6 @@
   ```
 - reboot (truenas scale) system!
   
-****due to the horrendous state of networking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
+****due to the horrendous state of networking in scale, these changes must be done over direct console via spice or vnc and all network connectivity (to truenas scale) will be lost until reboot!***
 https://ixsystems.atlassian.net/browse/NAS-118915
 

@@ -128,7 +128,7 @@
   ```bash
   nano bridged-network.xml
   ```
-  paste in the follwing:
+  Paste in the following:
   ```xml
   <network>
    <name>br0</name>

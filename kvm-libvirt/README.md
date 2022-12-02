@@ -189,7 +189,7 @@
 ![pci-device](https://user-images.githubusercontent.com/47095624/205194531-9c5f0229-b776-4816-a538-6094f9f2e153.png)
 - Complete install via graphical spice or vnc
  
-- create bridge in truenas scale (Use vnc or spice console instead of ssh!)
+- create bridge in truenas scale (Use vnc or spice console instead of ssh!*)
    ```bash
    cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
    ```

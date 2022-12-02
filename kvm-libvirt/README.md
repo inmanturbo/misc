@@ -171,3 +171,40 @@
 ![xml-editing](https://user-images.githubusercontent.com/47095624/205191891-8bcaf8ca-e80c-4325-b72e-530f1cc003b5.png)
 ![net-xml](https://user-images.githubusercontent.com/47095624/205192127-aad2147d-c1f4-4f22-8b44-701c223bb274.png)
 
+## Deploy TrueNAS-SCALE VM
+- #### Download the iso
+  ```bash
+  curl https://download.truenas.com/TrueNAS-SCALE-Angelfish/22.02.4/TrueNAS-SCALE-22.02.4.iso -o TrueNAS-SCALE-22.02.4.iso
+  ```
+- Add the iso to the default storage pool
+  ```bash
+  sudo cp TrueNAS-SCALE-22.02.4.iso /var/lib/libvirt/images
+  ```
+
+- Give it at least one bridged network device
+- Set cpu model to `host-passthrough`
+- At least 4 vcpus
+- At least 8G RAM
+- Attach a SATA Controller or LSI HBA
+![pci-device](https://user-images.githubusercontent.com/47095624/205194531-9c5f0229-b776-4816-a538-6094f9f2e153.png)
+- Complete install via graphical spice or vnc
+ 
+- create bridge in truenas scale (requires console access!*)
+ ```bash
+ cli -c "network interface create name=br0 type=BRIDGE bridge_members=eno1"
+ ```
+ - commit changes
+```bash
+cli -c "network interface commit"
+```
+- persist changes
+```bash
+cli -c "network interface checkin"
+```
+- reboot (truenas scale) system!
+  
+ 
+  
+  ****due to the horrendous state of networking in scale, these changes must be done over direct console or ipmi access and all network connectivity (to truenas scale) will be lost until reboot!***
+https://ixsystems.atlassian.net/browse/NAS-118915
+

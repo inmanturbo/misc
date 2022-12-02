@@ -180,7 +180,8 @@
   ```bash
   sudo cp TrueNAS-SCALE-22.02.4.iso /var/lib/libvirt/images
   ```
-
+- Use latest debian flavor
+- `20G` disk is more than enough
 - Give it at least one bridged network device
 - Set cpu model to `host-passthrough`
 - At least 4 vcpus

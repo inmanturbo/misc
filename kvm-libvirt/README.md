@@ -1,6 +1,6 @@
 # Graphical workstation kvm lab
 
-## First install ubuntu deskop with zfs on root
+## First install ubuntu deskop with zfs-on-root* (Optional)
 - #### Get the desktop iso
   ```bash
   curl https://releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso -o ubuntu-22.04.1-desktop-amd64.iso

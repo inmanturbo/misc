@@ -124,7 +124,11 @@
   - [x] eno2 <--use whichever port you want to use to connect VM's to the internet
 
 ## Create a virtual network with the bridge
-- #### create an xml file
+> The instructions below are to replace the default virtual network
+> with a bridged network. If you wish to create a seperate bridged network
+> and leave the default network as is skip steps 3-3 below, and use another
+> name in place of `default`
+1. #### create an xml file
   ```bash
   nano bridged-network.xml
   ```
@@ -136,15 +140,23 @@
    <bridge name="br0"/>
   </network>
   ```
-- #### define the network
+2. #### Stop the default network
+  ```bash
+  virsh net-destroy default
+  ```
+3. #### Undefine the default network
+  ```bash
+  virsh net-undefine default
+  ```
+4. #### Re-define the network
   ```bash
   sudo virsh net-define bridged-network.xml
   ```
-- #### Start the network
+5. #### Start the network
   ```bash
   sudo virsh net-start default
   ```
-- #### set the network to autostart
+6. #### set the network to autostart
   ```bash
   sudo virsh net-autostart default
   ```

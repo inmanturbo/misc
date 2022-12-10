@@ -13,3 +13,5 @@
 #### [truenas-scale](truenas-scale)
 #### [virtualmin](virtualmin)
 #### [laravel](laravel)
+     - [Jetstream](laravel/jetstream)
+     

@@ -1,3 +1,48 @@
+## qwik web services
+
+```bash
+service='my_service'
+```
+
+```bash
+laravel new $service --jet --teams
+```
+
+```bash
+ln -s $PWD/$service $HOME/Sites
+```
+
+```bash
+cd $service
+```
+
+```bash 
+mysql -u root -e "CREATE DATABASE $service"
+```
+
+```bash
+php artisan migrate:fresh
+```
+
+```bash
+code . && code config/jetstream.php
+```
+
+enable api feature
+
+```php
+    'features' => [
+        // Features::termsAndPrivacyPolicy(),
+        // Features::profilePhotos(),
+        Features::api(),
+        Features::teams(['invitations' => true]),
+        Features::accountDeletion(),
+    ],
+```
+
+
+
+
 ## Forcing urls to use https
 
 ```php

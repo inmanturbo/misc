@@ -1,4 +1,53 @@
-upgrading to use vite instead of mix
+## Forcing urls to use https
+
+```php
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //if the config('app.url_scheme') is set to https, then we will force the scheme to be https
+        if (config('app.url_scheme') === 'https') {
+            \URL::forceScheme('https');
+        }
+    }
+}
+```
+`config/app.php`
+```php
+return [
+//..
+'url_scheme' => env('APP_URL_SCHEME', 'http'),
+//..
+];
+```
+
+`.env`
+```ini
+APP_URL_SCHEME=https
+```
+
+## upgrading to use vite instead of mix
 
 `vite.config.js`
 ```js

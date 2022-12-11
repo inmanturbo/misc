@@ -5,7 +5,7 @@ service='my_service'
 ```
 
 ```bash
-laravel new $service --jet --teams
+laravel new $service --jet --teams--stack=livewire
 ```
 
 ```bash
